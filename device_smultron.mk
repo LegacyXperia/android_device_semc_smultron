@@ -11,18 +11,7 @@ PRODUCT_NAME := smultron
 PRODUCT_DEVICE := smultron
 PRODUCT_MODEL := smultron
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/semc/smultron/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 -include device/semc/mogami-common/mogami.mk
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-
-DISABLE_DEXPREOPT := false
 
 # These is the hardware-specific overlay, which points to the location
 # of hardware-specific resource overrides, typically the frameworks and
