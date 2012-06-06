@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VENDOR=semc
-DEVICE=urushi
+DEVICE=smultron
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 rm -rf $BASE/*
