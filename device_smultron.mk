@@ -11,10 +11,6 @@ PRODUCT_NAME := smultron
 PRODUCT_DEVICE := smultron
 PRODUCT_MODEL := smultron
 
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
-PRODUCT_COPY_FILES += \
-    $(TARGET_PREBUILT_KERNEL):kernel
-
 -include device/semc/mogami-common/mogami.mk
 
 # These is the hardware-specific overlay, which points to the location
