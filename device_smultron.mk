@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
     device/semc/smultron/prebuilt/hw_config.sh:system/etc/hw_config.sh \
     device/semc/smultron/prebuilt/pre_hw_config.sh:root/pre_hw_config.sh \
     device/semc/msm7x30-common/prebuilt/logo_M.rle:root/logo.rle \
-    device/semc/smultron/recovery.fstab:root/etc/recovery.fstab
+    device/semc/smultron/recovery.fstab:root/recovery.fstab
 
 
 # semc msm7x30 uses high-density artwork where available
