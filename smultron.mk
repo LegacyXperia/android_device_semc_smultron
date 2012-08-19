@@ -27,6 +27,18 @@ PRODUCT_COPY_FILES += \
     device/semc/smultron/prebuilt/bootrec-device:root/sbin/bootrec-device \
     device/semc/smultron/recovery.fstab:root/recovery.fstab
 
+# Device specific configs
+PRODUCT_COPY_FILES += \
+    device/semc/smultron/config/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc \
+    device/semc/smultron/config/atdaemon.kl:system/usr/keylayout/atdaemon.kl \
+    device/semc/smultron/config/keylayout/msm_pmic_pwr_key.kl:system/usr/keylayout/msm_pmic_pwr_key.kl \
+    device/semc/smultron/config/pm8058-keypad.kl:system/usr/keylayout/pm8058-keypad.kl \
+    device/semc/smultron/config/simple_remote.kl:system/usr/keylayout/simple_remote.kl \
+    device/semc/smultron/config/cyttsp_key.kl:system/usr/keylayout/cyttsp_key.kl \
+    device/semc/smultron/config/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
+    device/semc/smultron/config/sensors.conf:system/etc/sensors.conf \
+    device/semc/smultron/config/tiwlan.ini:system/etc/tiwlan.ini
+
 $(call inherit-product, device/semc/msm7x30-common/prebuilt/resources-mdpi.mk)
 
 #LCD DENSITY
