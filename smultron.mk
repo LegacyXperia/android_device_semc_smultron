@@ -14,10 +14,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
-# These are the hardware-specific configuration files
-PRODUCT_COPY_FILES += \
-    device/semc/smultron/prebuilt/media_profiles.xml:system/etc/media_profiles.xml
-
 # Init files
 PRODUCT_COPY_FILES += \
     device/semc/smultron/prebuilt/init.semc.usb.rc:root/init.semc.usb.rc \
