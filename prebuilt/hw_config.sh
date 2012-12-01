@@ -22,14 +22,13 @@ case $hwid in
   val_filter=0
   ;;
  *)
-  val_cycle=2
-  val_nburst=8
-  val_freq=2
-  val_threshold=15
+  val_cycle=0
+  val_nburst=26
+  val_freq=0
+  val_threshold=2
   val_filter=0
   ;;
 esac
-
 nv_param_loader 60240 prox_cal
 val_calibrated=$?
 case $val_calibrated in
