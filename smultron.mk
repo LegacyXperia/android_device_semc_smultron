@@ -21,10 +21,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/semc/smultron/recovery/bootrec-device:recovery/bootrec-device
 
-# Bluetooth config
-PRODUCT_COPY_FILES += \
-    device/semc/smultron/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
-
 # Device specific configs
 PRODUCT_COPY_FILES += \
     device/semc/smultron/config/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc \

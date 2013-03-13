@@ -18,4 +18,3 @@ TARGET_OTA_ASSERT_DEVICE := ST15i,ST15a,smultron
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/semc/smultron/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/semc/smultron/bluetooth/vnd_smultron.txt
