@@ -13,7 +13,6 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 # Init files
 PRODUCT_COPY_FILES += \
     device/semc/smultron/prebuilt/init.semc.usb.rc:root/init.semc.usb.rc \
-    device/semc/smultron/prebuilt/pre_hw_config.sh:root/pre_hw_config.sh \
     device/semc/smultron/prebuilt/hw_config.sh:system/etc/hw_config.sh \
     device/semc/msm7x30-common/prebuilt/logo_M.rle:root/logo.rle
 
