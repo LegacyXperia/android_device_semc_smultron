@@ -16,10 +16,6 @@ PRODUCT_COPY_FILES += \
     device/semc/smultron/prebuilt/hw_config.sh:system/etc/hw_config.sh \
     device/semc/msm7x30-common/prebuilt/logo_M.rle:root/initlogo.rle
 
-# Device specific part for two-stage boot
-PRODUCT_COPY_FILES += \
-    device/semc/smultron/recovery/bootrec-device:recovery/bootrec-device
-
 # Device specific configs
 PRODUCT_COPY_FILES += \
     device/semc/smultron/config/cyttsp-spi.idc:system/usr/idc/cyttsp-spi.idc \
