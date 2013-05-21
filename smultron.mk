@@ -5,8 +5,6 @@ DEVICE_PACKAGE_OVERLAYS += device/semc/smultron/overlay
 
 $(call inherit-product, device/semc/mogami-common/mogami.mk)
 
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
 # This device is mdpi.  However the platform doesn't
 # currently contain all of the bitmaps at mdpi density so
 # we do this little trick to fall back to the hdpi version
