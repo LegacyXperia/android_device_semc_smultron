@@ -11,24 +11,13 @@ echo 16  > $dev/btn_trig_hyst_time   # Button Hysteresis Time(Cycle) default = 1
 echo 500 > $dev/btn_trig_level  # default = 500
 
 # Proximity sensor configuration
-dev=/sys/bus/i2c/devices/0-0054
-hwid=`cat /sys/class/hwid/hwid`
-case $hwid in
- 0x0a)
-  val_cycle=2
-  val_nburst=7
-  val_freq=3
-  val_threshold=15
-  val_filter=0
-  ;;
- *)
-  val_cycle=0
-  val_nburst=26
-  val_freq=0
-  val_threshold=2
-  val_filter=0
-  ;;
-esac
+dev=/sys/bus/i2c/devices/0-0054/
+val_cycle=0
+val_nburst=26
+val_freq=0
+val_threshold=2
+val_filter=0
+
 nv_param_loader 60240 prox_cal
 val_calibrated=$?
 case $val_calibrated in
@@ -41,14 +30,51 @@ case $val_calibrated in
 esac
 
 echo $val_cycle > $dev/cycle    # Duration Cycle. Valid range is 0 - 3.
-echo $val_nburst > $dev/nburst  # Number of pulses in burst. Valid range is 0 - 15.
+echo $val_nburst > $dev/nburst  # Number of pulses in burst. Valid range is 0 - 15. 16 - 31 is a special range for smultron only (SP)
 echo $val_freq > $dev/freq      # Burst frequency. Valid range is 0 - 3.
 echo $val_threshold > $dev/threshold # sensor threshold. Valid range is 0 - 15 (0.12V - 0.87V)
 echo $val_filter > $dev/filter  # RFilter. Valid range is 0 - 3.
 
 # LMU AS3676 Configuration
 dev=/sys/devices/i2c-0/0-0040/leds
-echo 500 > $dev/button-backlight/max_current
+echo 1000 > $dev/button-backlight-rgb1/max_current_uA
+echo 1000 > $dev/button-backlight-rgb2/max_current_uA
+echo 3000 > $dev/red/max_current_uA
+echo 4500 > $dev/green/max_current_uA
+echo 3000 > $dev/blue/max_current_uA
+
+# Touch panel
+dev=/sys/devices/platform/spi_qsd.0/spi0.0
+app_id=`cat  $dev/appid`
+case "$app_id" in
+	"0x0505")
+		fw=touch_smultron_innolux.hex
+        ;;
+	"0x0105")
+		fw=touch_smultron_sony.hex
+        ;;
+	"0x0015")
+		fw=touch_smultron_sony.hex
+        ;;
+	*)
+		fw=touch_smultron_sony.hex
+        ;;
+esac
+cyttsp_fwloader -dev $dev -fw /system/etc/firmware/$fw
+
+#Touch calibration
+if `ls /data/ttsp_idac > /dev/null`; then
+        case `cat /data/ttsp_idac` in
+                "in_progress"|"fail")
+                        echo in_progress > /data/ttsp_idac
+                        cat $dev/calibration > /data/ttsp_idac
+                ;;
+        esac
+else
+        echo in_progress > /data/ttsp_idac
+        cat $dev/calibration > /data/ttsp_idac
+fi
+
 
 # TI BQ275xx firmware loader
 bq275xx_fwloader
