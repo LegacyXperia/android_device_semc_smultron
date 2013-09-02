@@ -30,22 +30,19 @@ lib/libwmsts.so
 
 # Camera proprietaries
 lib/hw/vendor-camera.semc.so
-lib/liboemcamera.so
-lib/libmmjpeg.so
-lib/libmmipl.so
-lib/libcamera_clientsemc.so
 lib/libcald_client.so
 lib/libcald_debugger.so
 lib/libcald_hal.so
 lib/libcald_imageutil.so
 lib/libcald_pal.so
 lib/libcald_server.so
+lib/libcamera_clientsemc.so
+lib/libcameralight.so
 lib/libface.so
 lib/libgemini.so
-lib/libcameraextensionclient.so
-lib/libcameraextensionjni.so
-lib/libcameraextensionservice.so
-lib/libcameralight.so
+lib/libmmipl.so
+lib/libmmjpeg.so
+lib/liboemcamera.so
 usr/semc/camera/APT00YP0.dat
 usr/semc/camera/APT00YP0_MT9V144.dat
 usr/semc/camera/KMO05BN0.dat
