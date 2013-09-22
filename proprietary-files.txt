@@ -22,9 +22,9 @@ lib/libpbmlib.so
 lib/libqdp.so
 lib/libqmi.so
 lib/libqueue.so
-lib/libuim.so
 lib/libril.so
 lib/libril-qc-1.so
+lib/libuim.so
 lib/libwms.so
 lib/libwmsts.so
 
@@ -37,6 +37,9 @@ lib/libcald_imageutil.so
 lib/libcald_pal.so
 lib/libcald_server.so
 lib/libcamera_clientsemc.so
+lib/libcameraextensionclient.so
+lib/libcameraextensionjni.so
+lib/libcameraextensionservice.so
 lib/libcameralight.so
 lib/libface.so
 lib/libgemini.so
@@ -53,11 +56,21 @@ usr/semc/camera/STW05BN0.dat
 usr/semc/camera/STW05BN0_BH6476.dat
 usr/semc/camera/STW05BN0_IMX072.dat
 
-# Other libraries and proprietary binaries
-bin/akmd8975
-bin/chargemon
+# Calibration
+bin/nv_param_loader
+bin/nvcustomizer
+bin/nvimport
+
+# Audio
 lib/libaudioalsa.so
+
+# Compass
+bin/akmd8975
+
+# Offline charging
+bin/chargemon
 lib/libmiscta.so
 
 # Touchscreen firmware
+bin/cyttsp_fwloader
 etc/firmware/touch_smultron_sony.hex
