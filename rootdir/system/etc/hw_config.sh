@@ -66,7 +66,3 @@ else
         echo in_progress > /data/ttsp_idac
         cat $dev/calibration > /data/ttsp_idac
 fi
-
-
-# TI BQ275xx firmware loader
-bq275xx_fwloader
