@@ -39,3 +39,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := cm_smultron
 PRODUCT_DEVICE := smultron
+
+# Custom tag for unofficial builds
+TARGET_UNOFFICIAL_BUILD_ID := LegacyXperia
