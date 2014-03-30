@@ -21,7 +21,7 @@ TARGET_SPECIFIC_HEADER_PATH += device/semc/smultron/include
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/semc/smultron/bluedroid
 
 # Kernel
-TARGET_KERNEL_CONFIG := nAa_smultron_defconfig
+TARGET_KERNEL_CONFIG := lx_smultron_defconfig
 
 # Sensors
 SOMC_CFG_SENSORS_ACCEL_BMA250_INPUT := yes
