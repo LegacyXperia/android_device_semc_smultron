@@ -34,3 +34,35 @@ echo $val_nburst > $dev/nburst  # Number of pulses in burst. Valid range is 0 - 
 echo $val_freq > $dev/freq      # Burst frequency. Valid range is 0 - 3.
 echo $val_threshold > $dev/threshold # sensor threshold. Valid range is 0 - 15 (0.12V - 0.87V)
 echo $val_filter > $dev/filter  # RFilter. Valid range is 0 - 3.
+
+# Touch panel
+dev=/sys/devices/platform/spi_qsd.0/spi_master/spi0/spi0.0
+app_id=`cat  $dev/appid`
+case "$app_id" in
+	"0x0505")
+		fw=touch_smultron_innolux.hex
+        ;;
+	"0x0105")
+		fw=touch_smultron_sony.hex
+        ;;
+	"0x0015")
+		fw=touch_smultron_sony.hex
+        ;;
+	*)
+		fw=touch_smultron_sony.hex
+        ;;
+esac
+cyttsp_fwloader -dev $dev -fw /system/etc/firmware/$fw
+
+#Touch calibration
+if `ls /data/ttsp_idac > /dev/null`; then
+        case `cat /data/ttsp_idac` in
+                "in_progress"|"fail")
+                        echo in_progress > /data/ttsp_idac
+                        cat $dev/calibration > /data/ttsp_idac
+                ;;
+        esac
+else
+        echo in_progress > /data/ttsp_idac
+        cat $dev/calibration > /data/ttsp_idac
+fi
