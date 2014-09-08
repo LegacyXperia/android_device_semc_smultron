@@ -15,8 +15,6 @@
 -include device/semc/mogami-common/BoardConfigCommon.mk
 -include vendor/semc/smultron/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH += device/semc/smultron/include
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/semc/smultron/bluedroid
 
